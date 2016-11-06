@@ -108,9 +108,9 @@ def addUser(request):
 def removeUser(request):
 	result={}
 	if request.is_ajax():
-		u_name=request.POST.get('u_name')
+		u_account=request.POST.get('u_account')
 		try:
-			re_user=Usergroup.objects.get(u_name=u_name)
+			re_user=Usergroup.objects.get(u_account=u_account)
 			re_user.delete()
 			result['ret_code']=0
 			result['ret_msg']=''
