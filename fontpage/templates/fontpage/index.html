@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'fontpage/index.css' %}">
+</head>
+<body>
+<form action="{% url 'mytry' %}" method="post">
+{% csrf_token %}
+	<input type="text" name="passs" />
+	<input type="submit" name="" />
+</form>
+</body>
+</html>
