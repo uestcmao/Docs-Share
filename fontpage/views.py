@@ -4,7 +4,7 @@ from django.http import JsonResponse
 import time
 # Create your views here.
 def index(request):
-	 content=Article.objects.all(isSee=true)
+	 content=Article.objects.filter(a_issee=True)
 	 return render(request,'fontpage/index.html',{'content':content})
 	#return render(request,'fontpage/index2.html')
 
@@ -92,7 +92,7 @@ def addUser(request):
 	if request.method=='POST':
 		new_account=request.POST.get('u_account')
 		new_password=request.POST.get('u_password')
-		new_nickname=request.POST.get('u_nickname')||"nick"
+		new_nickname=request.POST.get('u_nickname')
 		new_score=0
 		new_role=request.POST.get('u_role')
 		new_group=request.POST.get('u_group')
