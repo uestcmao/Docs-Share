@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Article,Usertable,Usergroup,Roletable
 from django.http import JsonResponse
 import time
+from django.contrib.sessions.models import Session
 # Create your views here.
 def index(request):
 	 content=Article.objects.filter(a_issee=True)
@@ -59,13 +60,13 @@ def login(request):
 		u_password=request.POST.get('u_password')
 		try:
 			checkUser=Usertable.objects.get(u_account=u_account,u_password=u_password)
-			request,session['u_account']=u_account
+			request.session['u_account']=u_account
 			return render(request,'fontpage/index.html',{'account':u_account})
 		except Exception as e:
-			return render(request,'fontpage/login.html')
+			return render(request,'fontpage/login.html',{'error':'error','account':u_account,'password':u_password})
 
 def logout(request):
-	del request,session['u_account']
+	del request.session['u_account']
 	adminIndex()
 
 def approve(request):
