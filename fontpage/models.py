@@ -18,6 +18,7 @@ class Article(models.Model):
     a_type = models.CharField(db_column='A_type', max_length=20, blank=True, null=True)  # Field name made lowercase.
     a_time = models.DateField(db_column='A_time', blank=True, null=True)  # Field name made lowercase.
     a_reading_amount = models.BigIntegerField(db_column='A_reading_amount', blank=True, null=True)  # Field name made lowercase.
+    a_issee = models.IntegerField(db_column='A_isSee', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
