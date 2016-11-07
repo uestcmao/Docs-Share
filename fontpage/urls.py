@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from .import views
 urlpatterns=[
-	url(r'^index/$',views.index,name='index'),
+	url(r'^$',views.index,name='index'),
 	url(r'^adminIndex/$',views.adminIndex,name='adminIndex'),
 	url(r'^deleteArticle/$',views.deleteArticle,name='deleteArticle'),
 	url(r'^addArticle/$',views.addArticle,name='addArticle'),
