@@ -209,10 +209,11 @@ def checkRole(request,u_account):
 def test(request):
 	return render(request,'fontpage/test.html')
 		
+
 def getSubmitPage(request):
 	if request.method=='POST':
 		content=Article.objects.filter(a_issee=False)
 	 	return render(request,'fontpage/backIndex.html',{'content':content})
 	 else:
 	 	pass
-		
+

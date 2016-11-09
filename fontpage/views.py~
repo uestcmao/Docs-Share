@@ -78,9 +78,19 @@ def login(request):
 
 def logout(request):
 	del request.session['u_account']
+<<<<<<< HEAD
 	result['ret_code']=0
 	result['ret_msg']="logout"
 	adminIndex(request,result)
+=======
+<<<<<<< HEAD
+	result['ret_code']=0
+	result['ret_msg']="logout"
+	adminIndex(request,logout)
+=======
+	adminIndex()
+>>>>>>> domstream/master
+>>>>>>> bd123cda7db6fd726c89b7dc391d4246557f8f1a
 
 def approve(request):
 	result={}
@@ -209,4 +219,14 @@ def checkRole(request,u_account):
 def test(request):
 	return render(request,'fontpage/test.html')
 		
+<<<<<<< HEAD
+def getSubmitPage(request):
+	if request.method=='POST':
+		content=Article.objects.filter(a_issee=False)
+	 	return render(request,'fontpage/backIndex.html',{'content':content})
+	 else:
+	 	pass
 		
+=======
+		
+>>>>>>> bd123cda7db6fd726c89b7dc391d4246557f8f1a
